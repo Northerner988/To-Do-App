@@ -5,7 +5,6 @@ namespace ToDoList.Models
     public class ToDoTask
    {
       public int Id { get; set; }
-        [RegularExpression("^[a-zA-Z]+$", ErrorMessage = "Please enter a valid title.")]
         [Required,StringLength(50, MinimumLength = 3, ErrorMessage = "Title must be between 3 and 50 characters.")]
         public string Title { get; set; } = string.Empty;
 
