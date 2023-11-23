@@ -4,9 +4,21 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="container ">
+<div class="container row">
 <div class="text-center mt-5 ">
     <h1 class="display-1">To-Do List</h1>
     <p class="fs-5">Help keep yourself organized and motivated.</p>
-    <a asp-page="" class="btn btn-dark btn-lg mt-2">Create Now</a>
+    <a asp-page="/tasks/createtask" class="btn btn-dark btn-lg mb-5">Create Now</a>
 </div>
+@foreach (var item in Model.ToDoTask) {
+       
+          <div class="col-md-4 col-12">
+            <div class="task__card">
+                <div class="card-body">
+                    <h4 class="card-title text-decoration-underline">@item.Title</h4>
+                    <p class="card-text mb-4">@item.Description</p>
+                    <p class="card-text">Complete for: @item.SelectDate.ToString("MM/dd/yyyy")</p>
+                </div>
+            </div>
+        </div>
+}
