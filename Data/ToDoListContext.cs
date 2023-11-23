@@ -1,6 +1,9 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using ToDoListApp.Models;
+using ToDoList.Models;
 
 
 namespace ToDoListApp.Data
@@ -11,6 +14,6 @@ namespace ToDoListApp.Data
         {
         }
 
-        public DbSet<ToDoTask> ToDoTasks { get; set; } = default!;
+        public DbSet<ToDoList.Models.ToDoTask> ToDoTasks { get; set; } = default!;
     }
 }
